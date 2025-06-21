@@ -3,9 +3,56 @@ html
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Şeyda için</title>
+  <title>Şeyda, barışalım mı?</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+      background-color: #fff0f5;
+    }
+    .hayir {
+      font-size: 20px;
+      color: red;
+      transition: 0.3s;
+    }
+    .kedi {
+      display: none;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Şeyda, seni çok seviyorum!</h1>
+
+  <h1>Şeyda seni üzdüğüm için özür dilerim 💔</h1>
+  <h2>Barışalım mı?</h2>
+
+  <button onclick="evet()">Evet</button>
+  <button onclick="hayir()">Hayır</button>
+
+  <p id="hayirYazi" class="hayir"></p>
+  <img id="kediFoto" class="kedi" src="https://i.ibb.co/gdPK9XP/kedi.jpg" width="300" alt="Kedi">
+
+  <script>
+    let sayac = 0;
+    function hayir() {
+      sayac++;
+      const yazi = document.getElementById("hayirYazi");
+      yazi.innerText = "Ama lütfen evet de 😢";
+      yazi.style.fontSize = `${20 + sayac * 5}px`;
+    }
+
+    function evet() {
+      document.getElementById("kediFoto").style.display = "block";
+document.getElementById("hayirYazi").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
