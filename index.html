@@ -2,7 +2,7 @@ html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Şeyda, barışalım mı?</title>
   <style>
     body {
@@ -11,45 +11,44 @@ html
       margin-top: 50px;
       background-color: #fff0f5;
     }
-    .hayir {
-      font-size: 20px;
-      color: red;
-      transition: 0.3s;
-    }
-    .kedi {
-      display: none;
-      margin-top: 20px;
+    #evetBtn {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      transition: font-size 0.3s;
     }
     button {
       padding: 10px 20px;
-      font-size: 16px;
       margin: 5px;
       cursor: pointer;
+    }
+    #sonuc {
+      display: none;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <h1 id="soru">Şeyda, seni üzdüğüm için özür dilerim. Barışalım mı?</h1>
-  <button onclick="evet()">Evet</button>
+  <button id="evetBtn" onclick="evet()">Evet</button>
   <button onclick="hayir()">Hayır</button>
 
-  <div id="sonuc" style="display: none;">
-    <img src="kedi.jpg" alt="Kedi" width="200">
+  <div id="sonuc">
+    <img src="kedi.jpg" alt="Kedi" width="200" />
     <p>İyi ki evet dedin!</p>
   </div>
 
   <script>
-    let hayirSayisi = 0;
+    let evetFontSize = 16; // başlangıç font boyutu
 
     function hayir() {
-      hayirSayisi++;
-      const soru = document.getElementById("soru");
-      soru.style.fontSize = (20 + hayirSayisi * 5) + "px";
-      soru.style.color = "red";
+      evetFontSize += 5; // her hayıra tıklamada büyü
+      const evetBtn = document.getElementById("evetBtn");
+      evetBtn.style.fontSize = evetFontSize + "px";
     }
 
-    function evet() {
-      document.getElementById("sonuc").style.display = "block";
+    function evet() {document.getElementById("sonuc").style.display = "block";
     }
   </script>
 </body>
