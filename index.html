@@ -22,37 +22,35 @@ html
     }
     button {
       padding: 10px 20px;
-      margin: 10px;
-      font-size: 18px;
+      font-size: 16px;
+      margin: 5px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-
-  <h1>Şeyda seni üzdüğüm için özür dilerim 💔</h1>
-  <h2>Barışalım mı?</h2>
-
+  <h1 id="soru">Şeyda, seni üzdüğüm için özür dilerim. Barışalım mı?</h1>
   <button onclick="evet()">Evet</button>
   <button onclick="hayir()">Hayır</button>
 
-  <p id="hayirYazi" class="hayir"></p>
-  <img id="kediFoto" class="kedi" src="https://i.ibb.co/gdPK9XP/kedi.jpg" width="300" alt="Kedi">
+  <div id="sonuc" style="display: none;">
+    <img src="kedi.jpg" alt="Kedi" width="200">
+    <p>İyi ki evet dedin!</p>
+  </div>
 
   <script>
-    let sayac = 0;
+    let hayirSayisi = 0;
+
     function hayir() {
-      sayac++;
-      const yazi = document.getElementById("hayirYazi");
-      yazi.innerText = "Ama lütfen evet de 😢";
-      yazi.style.fontSize = `${20 + sayac * 5}px`;
+      hayirSayisi++;
+      const soru = document.getElementById("soru");
+      soru.style.fontSize = (20 + hayirSayisi * 5) + "px";
+      soru.style.color = "red";
     }
 
     function evet() {
-      document.getElementById("kediFoto").style.display = "block";
-document.getElementById("hayirYazi").style.display = "none";
+      document.getElementById("sonuc").style.display = "block";
     }
   </script>
-
 </body>
 </html>
