@@ -3,33 +3,25 @@ html
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Sena, Benimle Çıkar mısın?</title>
+  <title>Sena, Benimle Çıkarmısın?</title>
   <style>
     body {
       text-align: center;
       font-family: sans-serif;
       margin-top: 50px;
-      background-image: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-kvZ3ibRGUh1ivpU0Qn8M5VjG/user-WrJXthayDE1UJqHTFRVJt98I/img-bV9Ey9Rhv4R5jD6HQqYReEyY.png?st=2025-07-01T18%3A00%3A00Z&se=2025-07-02T18%3A00%3A00Z&sp=r&sv=2021-08-06&sr=b&sig=jtlusLRNn8qTKyIYkq%2B4znkM2ITr1jlbUQXHYa3LC%2Bs%3D');
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-    #evetBtn, button {
-      font-size: 20px;
-      padding: 12px 24px;
-      margin: 10px;
-      cursor: pointer;
-      border: none;
-      border-radius: 8px;
+      background-color: #fff0f5;
     }
     #evetBtn {
-      background-color: green;
-      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
       transition: font-size 0.3s;
     }
-    button:not(#evetBtn) {
-      background-color: red;
-      color: white;
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
     }
     #sonuc {
       display: none;
@@ -38,27 +30,26 @@ html
   </style>
 </head>
 <body>
-  <h1 id="soru">Sena, senin gülüşün en karanlık günümde bile içimi aydınlatıyor. Hayatımda her gün seninle başlasın isterim... Benimle çıkar mısın?</h1><button id="evetBtn" onclick="evet()">Evet</button>
+  <h1 id="soru">Sena,Senin gülüşün, en karanlık günümde bile içimi aydınlatıyor. Hayatımda her gün seninle başlasın isterim... Benimle Çıkarmısın?</h1>
+  <button id="evetBtn" onclick="evet()">Evet</button>
   <button onclick="hayir()">Hayır</button>
 
   <div id="sonuc">
     <img src="tavşan.jpg" alt="tavşan" width="500" />
-    <p>İyi ki evet dedin! İşte ödülün!</p>
+    <p>İyiki evet dedin işte ödülün!</p>
   </div>
 
   <script>
-    let evetFontSize = 20;
+    let evetFontSize = 16; // başlangıç font boyutu
 
     function hayir() {
-      evetFontSize += 5;
-      document.getElementById("evetBtn").style.fontSize = evetFontSize + "px";
+      evetFontSize += 5; // her hayıra tıklamada büyü
+      const evetBtn = document.getElementById("evetBtn");
+      evetBtn.style.fontSize = evetFontSize + "px";
     }
 
-    function evet() {
-      document.getElementById("sonuc").style.display = "block";
+    function evet() {document.getElementById("sonuc").style.display = "block";
     }
   </script>
 </body>
 </html>
-
-
