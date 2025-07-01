@@ -9,32 +9,26 @@ html
       text-align: center;
       font-family: sans-serif;
       margin-top: 50px;
-      background-image: url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1350&q=80');
+      background-image: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-kvZ3ibRGUh1ivpU0Qn8M5VjG/user-WrJXthayDE1UJqHTFRVJt98I/img-bV9Ey9Rhv4R5jD6HQqYReEyY.png?st=2025-07-01T18%3A00%3A00Z&se=2025-07-02T18%3A00%3A00Z&sp=r&sv=2021-08-06&sr=b&sig=jtlusLRNn8qTKyIYkq%2B4znkM2ITr1jlbUQXHYa3LC%2Bs%3D');
       background-size: cover;
       background-position: center;
       color: white;
-      text-shadow: 1px 1px 4px black;
+    }
+    #evetBtn, button {
+      font-size: 20px;
+      padding: 12px 24px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
     }
     #evetBtn {
-      font-size: 20px;
-      padding: 12px 24px;
-      margin: 5px;
-      cursor: pointer;
-      background-color: #4CAF50;
+      background-color: green;
       color: white;
-      border: none;
-      border-radius: 8px;
+      transition: font-size 0.3s;
     }
-    button {
-      font-size: 20px;
-      padding: 12px 24px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 8px;
-    }
-    #hayirBtn {
-      background-color: #f44336;
+    button:not(#evetBtn) {
+      background-color: red;
       color: white;
     }
     #sonuc {
@@ -43,21 +37,23 @@ html
     }
   </style>
 </head>
-<body><h1 id="soru">Sena, senin gülüşün en karanlık günümde bile içimi aydınlatıyor. Hayatımda her gün seninle başlasın isterim... Benimle çıkar mısın?</h1>
-  <button id="evetBtn" onclick="evet()">Evet</button>
-  <button id="hayirBtn" onclick="hayir()">Hayır</button>
+<body>
+  <h1 id="soru">Sena, senin gülüşün en karanlık günümde bile içimi aydınlatıyor. Hayatımda her gün seninle başlasın isterim... Benimle çıkar mısın?</h1><button id="evetBtn" onclick="evet()">Evet</button>
+  <button onclick="hayir()">Hayır</button>
 
   <div id="sonuc">
     <img src="tavşan.jpg" alt="tavşan" width="500" />
-    <p>İyi ki evet dedin, işte ödülün!</p>
+    <p>İyi ki evet dedin! İşte ödülün!</p>
   </div>
 
   <script>
     let evetFontSize = 20;
+
     function hayir() {
       evetFontSize += 5;
       document.getElementById("evetBtn").style.fontSize = evetFontSize + "px";
     }
+
     function evet() {
       document.getElementById("sonuc").style.display = "block";
     }
