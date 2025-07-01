@@ -9,24 +9,29 @@ html
       text-align: center;
       font-family: sans-serif;
       margin-top: 50px;
-      background-image: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1350&q=80');
+      background-image: url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1350&q=80');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       color: white;
       text-shadow: 1px 1px 4px black;
     }
-    #evetBtn, #hayirBtn {
-      font-size: 24px;
-      padding: 15px 35px;
-      margin: 10px;
-      cursor: pointer;
-      border: none;
-      border-radius: 12px;
-    }
     #evetBtn {
+      font-size: 20px;
+      padding: 12px 24px;
+      margin: 5px;
+      cursor: pointer;
       background-color: #4CAF50;
       color: white;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
     }
     #hayirBtn {
       background-color: #f44336;
@@ -34,28 +39,25 @@ html
     }
     #sonuc {
       display: none;
-      margin-top: 30px;
+      margin-top: 20px;
     }
   </style>
 </head>
-<body>
-  <h1 id="soru">Sena, senin gülüşün en karanlık günümde bile içimi aydınlatıyor. Hayatımda her gün seninle başlasın isterim... Benimle çıkar mısın?</h1>
+<body><h1 id="soru">Sena, senin gülüşün en karanlık günümde bile içimi aydınlatıyor. Hayatımda her gün seninle başlasın isterim... Benimle çıkar mısın?</h1>
   <button id="evetBtn" onclick="evet()">Evet</button>
   <button id="hayirBtn" onclick="hayir()">Hayır</button>
 
-  <div id="sonuc"><img src="tavşan.jpg" alt="tavşan" width="500" />
+  <div id="sonuc">
+    <img src="tavşan.jpg" alt="tavşan" width="500" />
     <p>İyi ki evet dedin, işte ödülün!</p>
   </div>
 
   <script>
-    let evetFontSize = 24;
-
+    let evetFontSize = 20;
     function hayir() {
-      evetFontSize += 6;
-      const evetBtn = document.getElementById("evetBtn");
-      evetBtn.style.fontSize = evetFontSize + "px";
+      evetFontSize += 5;
+      document.getElementById("evetBtn").style.fontSize = evetFontSize + "px";
     }
-
     function evet() {
       document.getElementById("sonuc").style.display = "block";
     }
