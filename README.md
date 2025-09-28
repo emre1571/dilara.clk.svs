@@ -1,1 +1,1 @@
-# dilara.clk
+# sude.clk
